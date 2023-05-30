@@ -20,24 +20,29 @@
       </div>
       <!-- linker  -->
       <!-- sjekk om link eller open dialog -->
-
-      <v-btn-toggle v-model="toggle_btn" group>
+      <div>
+        <v-btn-toggle v-model="toggle_btn" group>
+          <v-btn
+            v-for="link in links"
+            :ripple="false"
+            class="mt-10"
+            :key="link.title"
+            :to="link.path"
+          >
+            {{ link.title }}
+          </v-btn>
+        </v-btn-toggle>
         <v-btn
-          v-for="link in links"
-          :ripple="false"
-          class="mt-10"
-          :key="link.title"
-          :to="link.path"
+          class="mt-1"
+          @click.stop="$refs.loginRef.openLoginDialog()"
+          plain
         >
-          {{ link.title }}
-        </v-btn>
-        <v-btn class="mt-10" @click="$refs.loginRef.openLoginDialog()">
           Login
         </v-btn>
-        <v-btn class="mt-10" @click="$refs.regRef.openRegDialog()">
+        <v-btn class="mt-1" @click.stop="$refs.regRef.openRegDialog()" plain>
           Register
         </v-btn>
-      </v-btn-toggle>
+      </div>
     </v-container>
 
     <!-- mobil  -->
