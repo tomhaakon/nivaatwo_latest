@@ -1,15 +1,8 @@
 <template>
-  <hello-world />
+  <v-container>
+    <v-row>
+      <v-toolbar-title class="ma-2 headline">Home</v-toolbar-title>
+    </v-row>
+  </v-container>
 </template>
-
-<script>
-  import HelloWorld from '../components/HelloWorld'
-
-  export default {
-    name: 'Home',
-
-    components: {
-      HelloWorld,
-    },
-  }
-</script>
+<script></script>
